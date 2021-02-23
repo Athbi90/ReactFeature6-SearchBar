@@ -17,6 +17,24 @@ export const ListWrapper = styled.div`
   display: flex;
 `;
 
+export const FoundWrapper = styled.div`
+  margin: 20px;
+
+  img {
+    width: 200px;
+    height: 200px;
+  }
+
+  p {
+    text-align: center;
+    background-color: yellow;
+
+    &.product-price {
+      color: ${(props) => props.theme.pink};
+    }
+  }
+`;
+
 export const ProductWrapper = styled.div`
   margin: 20px;
 

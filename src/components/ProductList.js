@@ -1,6 +1,7 @@
 // Styling
 import { ListWrapper } from "../styles";
 // Components
+import FoundItem from "./FoundItem";
 import ProductItem from "./ProductItem";
 import SearchBar from "./SearchBar";
 // Data
@@ -14,9 +15,16 @@ const ProductList = () => {
   );
   console.log(filteredList);
 
-  const productList = filteredList.map((product) => (
-    <ProductItem product={product} key={product.id} />
-  ));
+  let productList = null;
+  if (query === "") {
+    productList = filteredList.map((product) => (
+      <ProductItem product={product} key={product.id} />
+    ));
+  } else {
+    productList = filteredList.map((product) => (
+      <FoundItem product={product} key={product.id} />
+    ));
+  }
 
   return (
     <>
